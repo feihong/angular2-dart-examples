@@ -1,0 +1,18 @@
+<%!
+    title = 'Example'
+%>
+<%inherit file="base.html"/>
+
+<%block name="extrahead">
+% if DEV:
+<script async type='application/dart' src='app.dart'></script>
+% else:
+<script src='app.dart.js'></script>
+% endif
+</%block>
+
+<a href='${site}'>Back</a> &nbsp; <a href='https://github.com/${user}${site}tree/master/site/${slug}'>Source</a>
+
+<h1>${self.attr.title}</h1>
+
+${next.body()}
